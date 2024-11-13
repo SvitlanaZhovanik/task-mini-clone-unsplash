@@ -5,7 +5,7 @@ axios.defaults.headers.common['Authorization'] =
   `Client-ID ${process.env.NEXT_PUBLIC_UNSPLASH_API_KEY}`;
 
 export const getImages = async ({ page = 1 }) => {
-  const res = await axios.get(`photos?per_page=20&page=${page}`);
+  const res = await axios.get(`photos?per_page=10&page=${page}`);
   return res.data;
 };
 

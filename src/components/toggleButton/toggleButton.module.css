@@ -1,0 +1,53 @@
+.toggleContainer {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .toggleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 8px;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+
+  .root {
+    all: unset;
+    width: 42px;
+    height: 25px;
+    background-color: rgb(114, 109, 109);
+    border-radius: 9999px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    &:focus {
+      box-shadow: 0 0 0 2px rgb(175, 171, 171);
+    }
+    &[data-state='checked'] {
+      background-color: black;
+    }
+  }
+
+  .thumb {
+    display: block;
+    width: 21px;
+    height: 21px;
+    background-color: white;
+    border-radius: 9999px;
+    box-shadow: 0 2px 2px rgb(26, 26, 26);
+    transition: transform 100ms;
+    transform: translateX(2px);
+    will-change: transform;
+    &[data-state='checked'] {
+      transform: translateX(19px);
+    }
+  }
+
+  .label {
+    color: black;
+    font-size: 15px;
+    line-height: 1;
+    user-select: none;
+  }
+}

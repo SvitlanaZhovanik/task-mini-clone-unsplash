@@ -8,10 +8,10 @@ import Link from 'next/link';
 
 export const ImagesList = ({
   images,
-  columnCount = 3,
-}: Readonly<{ images: imagesApi[]; columnCount?: 5 | 3 }>) => {
+  columnCount,
+}: Readonly<{ images: imagesApi[]; columnCount?: boolean }>) => {
   const breakpointColumnsObj = {
-    default: columnCount,
+    default: columnCount ? 3 : 5,
     1280: 3,
     1024: 2,
     767: 1,

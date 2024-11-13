@@ -5,7 +5,7 @@ import data from '@/data/common.json';
 export const Header = () => (
   <header className={styles.header}>
     <div className="container">
-      <Link href="/#button">{data.headerLinkName}</Link>
+      <Link href="/">{data.headerLinkName}</Link>
     </div>
   </header>
 );

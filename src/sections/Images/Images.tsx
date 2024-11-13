@@ -6,6 +6,7 @@ import { ImagesList } from '@/components/ImagesList';
 import { imagesApi } from '@/types/api.types';
 import styles from './Images.module.css';
 import data from '@/data/common.json';
+import { ToggleButton } from '@/components/toggleButton';
 
 interface ImagesProps {
   images: imagesApi[];
@@ -16,6 +17,7 @@ export const Images = ({ images }: ImagesProps) => {
   const [imagesNew, setImagesNew] = useState(images);
   const [page, setPage] = useState(1);
   const [isMounted, setIsMounted] = useState(false);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -39,12 +41,16 @@ export const Images = ({ images }: ImagesProps) => {
     setPage(page + 1);
   };
 
+  const onToggleChange = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <section className={styles.imagesSection}>
       <div className="container">
-        <ImagesList images={imagesNew} columnCount={3} />
+        <ToggleButton onToggleChange={onToggleChange} />
+        <ImagesList images={imagesNew} columnCount={toggle} />
         <button
-          id="button"
           type="button"
           className="buttonStyle"
           onClick={() => getMoreImages()}
