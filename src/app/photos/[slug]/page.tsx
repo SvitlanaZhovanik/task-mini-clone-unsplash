@@ -18,14 +18,17 @@ export default async function ImagePage({
         <h1 className={styles.title}>{image.alt_description}</h1>
         <div className={styles.imagePosition}>
           <Image
-            src={image.urls.full}
+            src={image.urls.regular}
             alt={image.alt_description}
+            quality={70}
             width={800}
             height={600}
+            placeholder="blur"
             blurDataURL={image.blur_hash}
             priority
             className={`image ${styles.image}`}
           />
+
           <div>
             <div className={styles.infoWrapper}>
               <p className={styles.info}>
