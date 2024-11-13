@@ -1,13 +1,13 @@
-import type { NextConfig } from 'next';
+/** @type {import('next').NextConfig} */
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ['image/webp'],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'api.unsplash.com',
+        hostname: 'images.unsplash.com',
       },
     ],
   },

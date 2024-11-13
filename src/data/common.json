@@ -1,0 +1,10 @@
+{
+    "linkName": "Load More",
+    "imageData": {
+        "likeText": "Likes",
+        "viewText": "Views",
+        "authorText": "Author",
+        "downloadsText": "Downloads"
+    },
+    "headerLinkName": "Go to Home"
+}
