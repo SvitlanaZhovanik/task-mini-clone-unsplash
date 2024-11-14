@@ -4,6 +4,11 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Images Gallery App',
   description: 'App to view images and collections',
+  icons: [
+    {
+      url: '/favicon.ico',
+    },
+  ],
 };
 
 export default function RootLayout({

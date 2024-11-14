@@ -1,0 +1,19 @@
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.description {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+}

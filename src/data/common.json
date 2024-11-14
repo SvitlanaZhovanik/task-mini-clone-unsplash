@@ -9,5 +9,8 @@
     "linkTextGoBack": "Go Back",
     "toggleButtonName": "Number of columns",
     "notFoundLinkName": "Go to Home",
-    "notFoundTitle": "404 - Page Not Found"
+    "notFoundTitle": "404 - Page Not Found",
+    "componentNotFoundTitle": "Images not found",
+    "componentNotFoundDescription": "Images are temporarily unavailable, please try again in an hour",
+    "componentNotFoundImgAlt": "Sad cat"
 }
