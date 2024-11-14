@@ -1,5 +1,6 @@
 import { getCollection } from '@/api/getImages';
 import { CategoryImages } from '@/sections/CategoryImages';
+import { notFound } from 'next/navigation';
 
 export default async function Collection({
   params,
@@ -9,12 +10,11 @@ export default async function Collection({
   const { slug } = params;
   const textSlug = decodeURIComponent(slug);
   const collection = await getCollection(slug, 1);
+   if (!collection) {
+     notFound();
+   }
   return (
     <main>
-      <div className="container">
-        <h1>{textSlug}</h1>
-      </div>
-
       <CategoryImages images={collection} slug={textSlug} />
     </main>
   );

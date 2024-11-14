@@ -21,7 +21,7 @@ export default async function ImagePage({
   }
   const { imageData } = data;
   return (
-    <section>
+    <section className="section">
       <div className="container">
         <h1 className={styles.title}>{image.alt_description}</h1>
         <div className={styles.imagePosition}>

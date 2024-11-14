@@ -54,6 +54,7 @@ export const CategoryImages = ({ images, slug }: CategoryImagesProps) => {
   return (
     <section className="section">
       <div className="container">
+        <h1>{slug}</h1>
         <ToggleButton onToggleChange={onToggleChange} />
         <ImagesList images={imagesNew} columnCount={toggle} />
         <button
