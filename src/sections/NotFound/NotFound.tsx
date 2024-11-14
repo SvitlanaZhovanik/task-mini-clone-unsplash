@@ -18,6 +18,7 @@ export const NotFound = () => {
           alt={componentNotFoundImgAlt}
           width={473}
           height={517}
+          priority
           className={style.image}
         />
       </div>
