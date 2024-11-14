@@ -1,0 +1,8 @@
+.categoryTitle {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

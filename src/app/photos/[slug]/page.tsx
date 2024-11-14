@@ -5,9 +5,6 @@ import styles from './ImagePage.module.css';
 import data from '@/data/common.json';
 import { notFound } from 'next/navigation';
 
-export const dynamic = 'error';
-export const revalidate = false;
-
 export default async function ImagePage({
   params,
 }: {

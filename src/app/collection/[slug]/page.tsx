@@ -10,9 +10,10 @@ export default async function Collection({
   const { slug } = params;
   const textSlug = decodeURIComponent(slug);
   const collection = await getCollection(slug, 1);
-   if (!collection) {
-     notFound();
-   }
+
+  if (collection.length === 0) {
+    notFound();
+  }
   return (
     <main>
       <CategoryImages images={collection} slug={textSlug} />

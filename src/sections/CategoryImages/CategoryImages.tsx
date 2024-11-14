@@ -6,6 +6,7 @@ import { ImagesList } from '@/components/ImagesList';
 import { imagesApi } from '@/types/api.types';
 import { ToggleButton } from '@/components/toggleButton';
 import data from '@/data/common.json';
+import styles from './CategoryImages.module.css';
 
 interface CategoryImagesProps {
   images: imagesApi[];
@@ -54,7 +55,7 @@ export const CategoryImages = ({ images, slug }: CategoryImagesProps) => {
   return (
     <section className="section">
       <div className="container">
-        <h1>{slug}</h1>
+        <h1 className={styles.categoryTitle}>{slug}</h1>
         <ToggleButton onToggleChange={onToggleChange} />
         <ImagesList images={imagesNew} columnCount={toggle} />
         <button
