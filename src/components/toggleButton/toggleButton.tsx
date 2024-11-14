@@ -1,5 +1,6 @@
 import * as Switch from '@radix-ui/react-switch';
 import styles from './toggleButton.module.css';
+import data from '@/data/common.json';
 
 interface ToggleButtonProps {
   onToggleChange: () => void;
@@ -10,7 +11,7 @@ export const ToggleButton = ({ onToggleChange }: ToggleButtonProps) => {
     <form>
       <div className={styles.toggleContainer}>
         <label className={styles.label} htmlFor="toggle">
-          Count column
+          {data.toggleButtonName}
         </label>
         <Switch.Root
           className={styles.root}

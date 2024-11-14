@@ -42,8 +42,6 @@ export const ImagesList = ({
               alt={photo.alt_description}
               width={photo.width}
               height={photo.height}
-              placeholder="blur"
-              blurDataURL={photo.blur_hash}
               className="image"
             />
           </Link>

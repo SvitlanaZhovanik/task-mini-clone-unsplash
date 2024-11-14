@@ -1,11 +1,14 @@
-import Link from 'next/link';
 import styles from './Header.module.css';
-import data from '@/data/common.json';
+import React from 'react';
 
-export const Header = () => (
-  <header className={styles.header}>
-    <div className="container">
-      <Link href="/">{data.headerLinkName}</Link>
-    </div>
+export const Header = ({
+  children,
+  className = '',
+}: Readonly<{
+  children: React.ReactNode;
+  className?: string;
+}>) => (
+  <header className={`${styles.header} ${className}`}>
+    <div className="container">{children}</div>
   </header>
 );

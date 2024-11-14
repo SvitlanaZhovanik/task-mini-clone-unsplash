@@ -3,6 +3,10 @@ import Link from 'next/link';
 import { getImage } from '@/api/getImages';
 import styles from './ImagePage.module.css';
 import data from '@/data/common.json';
+import { notFound } from 'next/navigation';
+
+export const dynamic = 'error';
+export const revalidate = false;
 
 export default async function ImagePage({
   params,
@@ -11,6 +15,10 @@ export default async function ImagePage({
 }) {
   const { slug } = params;
   const image = await getImage(slug);
+
+  if (!image) {
+    notFound();
+  }
   const { imageData } = data;
   return (
     <section>
@@ -23,8 +31,6 @@ export default async function ImagePage({
             quality={70}
             width={800}
             height={600}
-            placeholder="blur"
-            blurDataURL={image.blur_hash}
             priority
             className={`image ${styles.image}`}
           />

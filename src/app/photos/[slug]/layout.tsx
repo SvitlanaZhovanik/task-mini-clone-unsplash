@@ -1,4 +1,5 @@
-import { Header } from '@/sections/Header/';
+import { GoBackLink } from '@/components/GoBackLink';
+import { Header } from '@/sections/Header';
 
 export default function ImageLayout({
   children,
@@ -7,7 +8,9 @@ export default function ImageLayout({
 }>) {
   return (
     <>
-      <Header />
+      <Header>
+        <GoBackLink />
+      </Header>
       <main>{children}</main>
     </>
   );

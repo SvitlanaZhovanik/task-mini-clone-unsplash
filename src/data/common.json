@@ -6,5 +6,8 @@
         "authorText": "Author",
         "downloadsText": "Downloads"
     },
-    "headerLinkName": "Go to Home"
+    "linkTextGoBack": "Go Back",
+    "toggleButtonName": "Number of columns",
+    "notFoundLinkName": "Go to Home",
+    "notFoundTitle": "404 - Page Not Found"
 }
