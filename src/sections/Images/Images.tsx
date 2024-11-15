@@ -21,6 +21,7 @@ export const Images = ({ images }: ImagesProps) => {
   const [queryPage, setQueryPage] = useState(1);
   const [isMounted, setIsMounted] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -39,15 +40,19 @@ export const Images = ({ images }: ImagesProps) => {
   }, [imagesNew, page, isMounted]);
 
   const getMoreImages = async () => {
+    setIsLoading(true);
     const data = await getImages({ page: page + 1 });
     setImagesNew([...imagesNew, ...data]);
     setPage(page + 1);
+    setIsLoading(false);
   };
 
   const getMoreImagesByQuery = async () => {
+    setIsLoading(true);
     const data = await getImagesByQuery(query, queryPage);
     setResult([...result, ...data]);
     setQueryPage(queryPage + 1);
+    setIsLoading(false);
   };
 
   const onToggleChange = () => {
@@ -81,7 +86,7 @@ export const Images = ({ images }: ImagesProps) => {
               : () => getMoreImages()
           }
         >
-          {data.linkName}
+          {isLoading ? data.loadingName : data.linkName}
         </button>
       </div>
     </section>

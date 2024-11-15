@@ -13,5 +13,6 @@
     "componentNotFoundTitle": "Images not found",
     "componentNotFoundDescription": "Images are temporarily unavailable, please try again in an hour",
     "componentNotFoundImgAlt": "Sad cat",
-    "buttonSearchText": "Search"
+    "buttonSearchText": "Search",
+    "loadingName": "Loading..."
 }
