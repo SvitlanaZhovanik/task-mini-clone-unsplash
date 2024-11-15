@@ -42,7 +42,7 @@ Follow these steps to set up the project locally:
 
 4. **Run the development server:**
    ```bash
-   npm un dev
+   npm run dev
    ```
 5. **Access the application:** Open [http://localhost:3000](http://localhost:3000) in your browser.
 
