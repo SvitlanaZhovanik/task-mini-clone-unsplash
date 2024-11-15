@@ -32,12 +32,13 @@ Follow these steps to set up the project locally:
     npm install
    ```
 3. **Set up the Unsplash API:**
+
    - Sign up or log in to Unsplash and create an application to obtain your API key.
    - Create a .env.local file in the root directory and add your Unsplash API key:
 
-```makefile
-        REACT_APP_UNSPLASH_API_KEY=your_api_key_here
-```
+   ```makefile
+       REACT_APP_UNSPLASH_API_KEY=your_api_key_here
+   ```
 
 4. **Run the development server:**
    ```bash
