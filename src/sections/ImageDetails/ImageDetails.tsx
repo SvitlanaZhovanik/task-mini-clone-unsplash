@@ -36,6 +36,7 @@ export const ImageDetails = ({ image }: ImageDetailsProps) => {
             quality={70}
             width={800}
             height={600}
+            unoptimized
             priority
             className={`image ${styles.image}`}
           />
