@@ -12,7 +12,7 @@ This repository contains a mini-clone of [Unsplash](https://unsplash.com/), desi
 - **Lightweight**: Built with modern tools for performance and scalability.
 
 ## Technologies Used
-
+- **Next.js**: React framework
 - **React**: Component-based UI development.
 - **TypeScript**: Type-safe JavaScript for enhanced reliability and maintainability.
 - **CSS**: Use module CSS.
@@ -42,7 +42,7 @@ Follow these steps to set up the project locally:
 
 4. **Run the development server:**
    ```bash
-   npm un dev
+   npm run dev
    ```
 5. **Access the application:** Open [http://localhost:3000](http://localhost:3000) in your browser.
 
