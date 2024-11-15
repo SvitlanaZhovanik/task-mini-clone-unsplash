@@ -12,7 +12,7 @@ This repository contains a mini-clone of [Unsplash](https://unsplash.com/), desi
 - **Lightweight**: Built with modern tools for performance and scalability.
 
 ## Technologies Used
-
+- **Next.js**: React framework
 - **React**: Component-based UI development.
 - **TypeScript**: Type-safe JavaScript for enhanced reliability and maintainability.
 - **CSS**: Use module CSS.
