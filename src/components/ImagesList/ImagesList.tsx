@@ -33,6 +33,7 @@ export const ImagesList = ({
                 width={30}
                 height={30}
                 className={styles.avatar}
+                unoptimized
               />
 
               <p>{photo.user.name}</p>
@@ -43,6 +44,7 @@ export const ImagesList = ({
               width={photo.width}
               height={photo.height}
               className="image"
+              unoptimized
             />
           </Link>
         </div>
