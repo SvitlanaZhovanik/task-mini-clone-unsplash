@@ -9,6 +9,15 @@ export const metadata: Metadata = {
       url: '/favicon.ico',
     },
   ],
+  openGraph: {
+    title: 'Images Gallery App',
+    description: 'App to view images and collections',
+    images: [
+      {
+        url: '/public/ogp.jpg',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
