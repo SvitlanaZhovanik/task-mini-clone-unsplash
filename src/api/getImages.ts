@@ -23,7 +23,7 @@ export const getImage = async (slug: string) => {
     return undefined;
   }
 };
-export const getCollection = async (slug: string, page: number) => {
+export const getImagesByQuery = async (slug: string, page: number) => {
   try {
     const res = await axios.get(`search/photos?query=${slug}&page=${page}`);
     return res.data.results;

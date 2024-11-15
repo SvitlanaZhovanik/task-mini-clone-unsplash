@@ -1,4 +1,4 @@
-import { getCollection } from '@/api/getImages';
+import { getImagesByQuery } from '@/api/getImages';
 import { CategoryImages } from '@/sections/CategoryImages';
 import { notFound } from 'next/navigation';
 
@@ -9,7 +9,7 @@ export default async function Collection({
 }) {
   const { slug } = params;
   const textSlug = decodeURIComponent(slug);
-  const collection = await getCollection(slug, 1);
+  const collection = await getImagesByQuery(slug, 1);
 
   if (collection.length === 0) {
     notFound();

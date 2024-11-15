@@ -121,6 +121,38 @@ select {
   padding-top: 70px;
   padding-bottom: 20px;
 }
+
+.typewriter {
+  display: flex;
+  width: 180px;
+  overflow: hidden;
+  border-right: 3px solid grey;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 5px;
+  animation:
+    typing 3.5s steps(20, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 180px;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: grey;
+  }
+}
 @media (min-width: 768px) and (min-width: 1024px) {
   .section {
     padding-top: 40px;

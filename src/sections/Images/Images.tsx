@@ -1,11 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getImages } from '@/api/getImages';
 import { ImagesList } from '@/components/ImagesList';
-import { imagesApi } from '@/types/api.types';
 import { ToggleButton } from '@/components/toggleButton';
+import { SearchForm } from '@/components/SearchForm/SearchForm';
+import { imagesApi } from '@/types/api.types';
+import { getImages, getImagesByQuery } from '@/api/getImages';
 import data from '@/data/common.json';
+import styles from './Images.module.css';
 
 interface ImagesProps {
   images: imagesApi[];
@@ -14,6 +16,9 @@ interface ImagesProps {
 export const Images = ({ images }: ImagesProps) => {
   const [imagesNew, setImagesNew] = useState(images);
   const [page, setPage] = useState(1);
+  const [query, setQuery] = useState('');
+  const [result, setResult] = useState<imagesApi[]>([]);
+  const [queryPage, setQueryPage] = useState(1);
   const [isMounted, setIsMounted] = useState(false);
   const [toggle, setToggle] = useState(false);
 
@@ -39,6 +44,12 @@ export const Images = ({ images }: ImagesProps) => {
     setPage(page + 1);
   };
 
+  const getMoreImagesByQuery = async () => {
+    const data = await getImagesByQuery(query, queryPage);
+    setResult([...result, ...data]);
+    setQueryPage(queryPage + 1);
+  };
+
   const onToggleChange = () => {
     setToggle(!toggle);
   };
@@ -46,12 +57,29 @@ export const Images = ({ images }: ImagesProps) => {
   return (
     <section className="section">
       <div className="container">
-        <ToggleButton onToggleChange={onToggleChange} />
-        <ImagesList images={imagesNew} columnCount={toggle} />
+        <div className={styles.searchWrapper}>
+          <SearchForm
+            query={query}
+            queryPage={queryPage}
+            setQuery={setQuery}
+            setResult={setResult}
+            setQueryPage={setQueryPage}
+          />
+          <ToggleButton onToggleChange={onToggleChange} />
+        </div>
+
+        <ImagesList
+          images={result.length > 0 ? result : imagesNew}
+          columnCount={toggle}
+        />
         <button
           type="button"
           className="buttonStyle"
-          onClick={() => getMoreImages()}
+          onClick={
+            result.length > 0
+              ? () => getMoreImagesByQuery()
+              : () => getMoreImages()
+          }
         >
           {data.linkName}
         </button>

@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <>
       <Header>
-        <h1>Images</h1>
+        <h1 className="typewriter">Images</h1>
       </Header>
       <main>{images ? <Images images={images} /> : <NotFound />}</main>
     </>

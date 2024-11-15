@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getCollection } from '@/api/getImages';
+import { getImagesByQuery } from '@/api/getImages';
 import { ImagesList } from '@/components/ImagesList';
 import { imagesApi } from '@/types/api.types';
 import { ToggleButton } from '@/components/toggleButton';
@@ -44,7 +44,7 @@ export const CategoryImages = ({ images, slug }: CategoryImagesProps) => {
   }, [imagesNew, page, isMounted, slug]);
 
   const getMoreImages = async () => {
-    const data = await getCollection(slug, page + 1);
+    const data = await getImagesByQuery(slug, page + 1);
     setImagesNew([...imagesNew, ...data]);
     setPage(page + 1);
   };
